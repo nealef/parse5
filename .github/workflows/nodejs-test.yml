@@ -16,7 +16,7 @@ permissions:
 
 jobs:
     lint:
-        runs-on: ubuntu-22.04-ppc64le
+        runs-on: ubuntu-24.10-s390x
         steps:
             - uses: actions/checkout@v4.2.1
               with:
@@ -25,7 +25,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 20
-                  architecture: ppc64le
+                  architecture: s390x
                   cache: npm
             - run: npm ci
             - run: npm run lint
@@ -36,7 +36,7 @@ jobs:
             checks: write #  to create new checks (coverallsapp/github-action)
 
         name: Node ${{ matrix.node }}
-        runs-on: ubuntu-22.04-ppc64le
+        runs-on: ubuntu-24.10-s390x
 
         strategy:
             fail-fast: false
@@ -53,7 +53,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node }}
-                  architecture: ppc64le
+                  architecture: s390x
                   cache: npm
             - run: npm ci
             - run: npm run build --if-present
