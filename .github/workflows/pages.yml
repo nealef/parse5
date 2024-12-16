@@ -8,7 +8,7 @@ on:
 jobs:
     deploy:
         name: Deploy to GitHub Pages
-        runs-on: ubuntu-24.10-s390x
+        runs-on: ubuntu-24.04-s390x
         steps:
             - uses: actions/checkout@v4.2.1
             - uses: actions/setup-node@v3
