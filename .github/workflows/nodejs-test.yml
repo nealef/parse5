@@ -37,7 +37,7 @@ jobs:
             checks: write #  to create new checks (coverallsapp/github-action)
 
         name: Node ${{ matrix.node }}
-        runs-on: ubuntu-24.10-s390x
+        runs-on: ubuntu-24.04-s390x
 
         strategy:
             fail-fast: false
